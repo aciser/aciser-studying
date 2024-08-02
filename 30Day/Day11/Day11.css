@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --success-: green;
+    --warning-: orange;
+    --error-: red;
+
+    --success-light-:rgba(100, 175, 100, 0.8);
+    --warning-light-: rgba(255, 201, 101, 0.8);
+    --error-light-:rgba(255, 180, 180, 0.8);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+body{
+    height: 100vh;
+    background: #ebe8e8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    padding: 5px 10px;
+    margin: auto 10px;
+    font-size: 18px;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+button:hover{
+    transform: scale(1.1);
+}
+.success{
+    background: var(--success-);
+}
+.warning{
+    background: var(--warning-);
+}
+.error{
+    background: var(--error-);
+}
+#toast-wrapper{
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    margin-bottom: 10px;
+}
+.toast-wrapper{
+    border: none;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    border-left: 6px var(--success-) solid;
+    overflow: hidden;
+    animation: slideshow 2s ease forwards;
+}
+
+.toast-wrapper i{
+    margin: 0 5px;
+}
+.countdown{
+    background: var(--success-);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    animation: countdown 3s ease forwards;
+    animation-delay: 2s;
+}
+.toast-wrapper.success{
+    border-left: 6px var(--success-) solid;
+    background: var(--success-light-);
+    
+}
+.toast-wrapper.warning{
+    border-left: 6px var(--warning-) solid;
+    background: var(--warning-light-);
+    
+}
+.toast-wrapper.error{
+    border-left: 6px var(--error-) solid;
+    background: var(--error-light-);
+    
+}
+.success .countdown{
+    background: var(--success-);
+}
+.warning .countdown{
+    background: var(--warning-);
+}
+.error .countdown{
+    background: var(--error-);
+}
+@keyframes countdown{
+    0%{
+        width: 100%;
+    }
+    100%{
+        width: 0%;
+    }
+}
+
+@keyframes slideshow{
+    0%{transform: translateX(100%);}
+    25%{transform: translateX(-10%);}
+    50%{transform: translateX(0%);}
+    100%{transform: translateX(-10px);}
+}
+@keyframes slidehide{
+    0%{transform: translateX(-10%);}
+    25%{transform: translateX(0%);}
+    50%{transform: translateX(-10%);}
+    100%{transform: translateX(200%);}
+}
