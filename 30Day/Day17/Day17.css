@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    background: rgb(156, 123, 184);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.counter{
+    color: white;
+    padding: 20px 40px;
+    background: rgb(110, 57, 179);
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    border: none;
+    outline: none;
+    text-align: center;
+    margin: 20px 0;
+}
+.counter p{
+    margin-bottom: 15px;
+}
+.counter h1{
+    font-size: 50px;
+}
