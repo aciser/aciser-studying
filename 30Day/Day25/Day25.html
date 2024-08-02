@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="Day25.css" />
+        <link rel="stylesheet" href="fontawesome-free-6.5.2-web/css/all.css">
+    </head>
+    <body>
+        <div class="player">
+             <video width="600" height="400" src="Videos/A_Highlight.mp4"></video>
+             <div class="control">
+                <div class="video-control">
+                    <div class="play"><i class="fa-solid fa-play"></i></div>
+                    <div class="process">00:00/00:00</div>
+                    <input type="range" class="video-process" step="1" value="0">
+                    <div class="prev"><i class="fa-solid fa-backward-step"></i></div>
+                    <div class="skip"><i class="fa-solid fa-forward-step"></i></div>
+                </div>
+                <div class="volume">
+                    <div class="mute-volume"><i class="fa-solid fa-volume-high"></i></div>
+                    <input type="range" min="0" max="100" step="1" class="volume-value">
+                </div>
+             </div>
+        </div>
+        
+    </body>
+    <script src="Day25.js"></script>
+</html> 

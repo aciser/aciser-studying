@@ -1,0 +1,121 @@
+:root{
+    --light-mode: #2196F3;
+    --dark-mode: rgb(68, 126, 68);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+body{
+    height: 100vh;
+    background: #dadada;
+}
+.head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    font-size: 30px;
+    color: var(--light-mode);
+}
+h2{
+    font-weight: bold;
+}
+h1{
+    margin-top: 200px;
+    text-align: center;
+    color: var(--light-mode);
+    font-size: 72px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+.content{
+    width: 90%;
+    font-size: 25px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 15px;
+    background: #aaa;
+    border: none;
+    outline: none;
+}
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 200px;
+
+}
+button{
+    font-size: 25px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    border: none;
+    outline: none;
+    background: var(--light-mode);
+    color: white;
+    transition: 0.2s;
+    cursor: pointer;
+}
+button:hover{
+    transform: scale(1.1);
+}
+.switch{
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 34px;
+}
+.switch input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--light-mode);
+    transition: 0.4s;
+    border-radius: 34px;
+}
+.slider::before{
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+input:checked + .slider{
+    background: var(--dark-mode);
+}
+input:focus + .slider{
+    box-shadow: 0 0 1px var(--dark-mode);
+}
+input:checked + .slider::before{
+    transform: translateX(46px);
+}
+body.dark h2{
+    color: var(--dark-mode);
+}
+body.dark h1{
+    color: var(--dark-mode);
+}
+body.dark p{
+    color: white;
+}
+body.dark button{
+    background: var(--dark-mode);
+}
+body.dark{
+    background: rgba(14, 13, 13, 0.822);
+}

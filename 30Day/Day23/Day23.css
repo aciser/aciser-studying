@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img{
+    width: 500px;
+    height: 800px;
+}
+#mirror{
+    width: 200px;
+    height: 200px;
+    border: 1px white solid;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    overflow: hidden;
+    background-image: url(images/IMG_20240517_151826.jpg);
+    background-size: 500%;
+    pointer-events: none;
+}
+
+.hide{
+    display: none;
+    opacity: none;
+}

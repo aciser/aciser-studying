@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+body{
+    height: 100vh;
+    background: linear-gradient( 135deg,rgb(53, 133, 109) 40%, white) 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+}
+.input-zone{
+    display: flex;
+    margin-bottom: 20px;
+}
+.password-zone{
+    position:relative;
+    background: white;
+    width: 300px;
+    height: 40px;
+    margin-right: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+.password-zone input{
+    border: none;
+    outline: none;
+    width: 90%;
+    color: black;
+}
+.password-zone i{
+    position: absolute;
+    transform: translateX(7px);
+}
+button{
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background: rgb(57, 107, 99);
+    color: white;
+    padding: 0 10px;
+    transition: 0.2s;
+}
+button:hover{
+    transform: scale(1.1);
+}
+.condition-zone{
+    background: rgb(57, 107, 99);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+.condition{
+    display: flex;
+    margin-bottom: 10px;
+}
+.condition:last-child{
+    margin-bottom: 0;
+}
+.condition i{
+    padding-right: 5px;
+    transform: translateY(2px);
+}
+.error{
+    color: red;
+    animation: error 0.4s ease-in-out forwards;
+}
+.alert{
+    visibility: hidden;
+    width: 250px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    padding: 20px;
+    position: fixed;
+    transform: translateY(-200px);
+
+}
+.alert.show{
+    visibility: visible;
+    animation: fadein 0.5s, fadeout 0.5s 2s forwards;
+}
+@keyframes error {
+    0%{transform:translateX(-3px);}
+    50%{transform: translateX(6px);}
+    100%{transform: translateX(-3px);}
+}
+@keyframes fadein {
+    0%{transform: translateY(-500px);opacity: 0;}
+    100%{transform: translateY(-200px);opacity: 1;}
+}
+@keyframes fadeout {
+    0%{transform: translateY(-200px);opacity: 1;}
+    100%{transform: translateY(-500px);opacity: 0;}
+}

@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.player{
+    margin-top: 20px;
+    position: relative;
+}
+.control{
+    height: 20px;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    bottom: 0;
+    left: 0;
+    transform: translateY(-40px);
+    transition: 0.3s;
+}
+.video-control{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    transition: 0.3s;
+}
+.video-control *{
+    margin: 0 5px;
+}
+.video-control input{
+    width: 60%;
+}
+.volume{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    color: white;
+    transition: 0.3s;
+}
+.volume *{
+    margin: 0 5px;
+}
+.volume input{
+    width: 100%;
+}
+.hide{
+    opacity: 0;
+    display: none;
+}
+
