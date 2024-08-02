@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+}
+body{
+    height: 100vh;
+    background: #dadada;
+}
+.container{
+    width: 400px;
+    height: 500px;
+    margin:  50px auto;
+    background: white;
+    border-radius: 5px;
+    overflow-y: scroll;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+h2{
+    text-align: center;
+    margin: 10px auto;
+}
+.container .search-box{
+    width: 90%;
+    border: 1px black solid;
+    border-radius: 5px;
+    background: white;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.search-box i{
+    font-size: 15px;
+    padding: 5px;
+}
+.search-box input{
+    width: 100%;
+    padding: 0 10px;
+    font-size: 15px;
+    border: none;
+    outline: none;
+}
+.container .wrap{
+    margin: 20px auto;
+}
+.product{
+    display: flex;
+    height: 100px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+}
+.product img{
+    width: 100px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+.product .info{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.product .name, .product .price{
+    text-align: center;
+    font-size: 15px;
+    width: 100%;
+}
+.product .name{
+    font-weight: bold;
+}
+.product:hover{
+    background: #dadada;
+}
+.hide{
+    display: none;
+}
