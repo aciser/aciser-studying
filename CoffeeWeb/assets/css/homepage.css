@@ -1,0 +1,94 @@
+@import url('https://fonts.cdnfonts.com/css/master-of-break');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main{
+    height: 2800px;
+}
+.about-container{
+    background: url('../../images/bg_nen3.png');
+    height: 1400px;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+.about-container *{
+    border: 1px black solid;
+}
+.about-us-container{
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.about-brim{
+    position: relative;
+    background: url('../../images/bg_nen1.png');
+    background-size: cover;
+    width: 1000px;
+    height: 600px;
+}
+.brim-detail{
+    width: 500px;
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    height: 400px;
+}
+.brim-detail h2{
+    font-size: 40px;
+    font-family: sans-serif;
+    font-weight: lighter;
+    color: #808080;
+}
+.brim-detail h1{
+    font-size: 52px;
+    font-family:'Master Of Break', sans-serif;
+    color: #4f4f4f;
+    font-weight: lighter;
+    margin: 20px 0;
+}
+.brim-detail p{
+    font-size: 20px;
+    margin: 40px 0;
+}
+.readmore-btn{
+    border: 1px var(--main--color) dashed;
+    width: 200px;
+    height: 50px;
+    margin-left: 20px;
+    position: relative;
+}
+.readmore-btn button{
+    position: absolute;
+    height: 50px;
+    width: 180px;
+    background: var(--main--color);
+    color: white;
+    font-size: 30px;
+    border: none;
+    outline: none;
+    left: 9px;
+    top: -15px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.readmore-btn button:hover{
+    transform: scale(1.1);
+}
+.about-video{
+    position: absolute;
+    background-size: cover;
+    background: url('../../images/bg_nen4.png');
+    width: 400px;
+    height: 300px;
+    right: 20px;
+    top: 100px;
+    padding: 20px;
+}
+.about-product-container{
+    height: 700px;
+}
