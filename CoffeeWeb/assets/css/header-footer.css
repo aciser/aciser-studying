@@ -1,10 +1,11 @@
 :root{
-    --main--color: rgb(23, 136, 136);
+    --main--color: rgb(50, 192, 192);
 }
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 body{
     height: 100vh;
