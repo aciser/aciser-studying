@@ -1,5 +1,7 @@
 @import url('https://fonts.cdnfonts.com/css/master-of-break');
-
+@import '../css/animations.css';
+@import '../css/header-footer.css';
+@import '../fontawesome-free-6.5.2-web/css/all.css';
 *{
     margin: 0;
     padding: 0;
