@@ -24,7 +24,16 @@ var mockdata = [{
 }]
 var carouseList = document.querySelectorAll('.navigation-point')
 var productCarouse = document.querySelector('.product-carouse')
-var primeContent = document.querySelector('.prime-content')
+var arrCarouse = Array.from(carouseList)
+
+//init
+for(let i = 0;i<mockdata.length;i++){
+    var name = mockdata[i].name
+    var pic = mockdata[i].picture
+    createContent(name,pic)
+}
+carouseSlideshow()
+carouseClick()
 //create content
 function createContent(n,p){
     var primeContent = document.createElement('div')
@@ -41,35 +50,40 @@ function createContent(n,p){
                 </div>`
     productCarouse.appendChild(primeContent)
 }
-function productslideshow(){
-    let i = 0
-    productCarouse.innerHTML =""
-    var name = mockdata[i].name
-    var pic = mockdata[i].picture
-    carouseList[i].style.opacity = '1'
-    createContent(name,pic)
-        setInterval(() => {
-        productCarouse.innerHTML =""
-        for(let n = 0; n< carouseList.length;n++){
-            carouseList[n].style.opacity = '0.6'
-        }
-        i++
-        if(i >= mockdata.length){
-            i=0
-            var name = mockdata[i].name
-            var pic = mockdata[i].picture
-            createContent(name,pic)
-            carouseList[i].style.opacity = '1'
-
+//Carouse slideshow
+function carouseSlideshow(){
+    var primeContent = document.querySelectorAll('.prime-content')
+    var arr = Array.from(primeContent)
+    let j = 0
+    carouseList[j].style.opacity = '1'
+    setTimeout(() => {
+        j=1
+    }, 6000);
+    setInterval(() => {
+        if(j < arr.length){
+            for(let i = 0 ; i <arr.length;i++){
+                primeContent[i].style.transform = `translateX(-${(j)*100}%)`
+            }
+            for(let i = 0; i<arrCarouse.length;i++){
+                carouseList[i].style.opacity = '0.6'
+            }
+            carouseList[j].style.opacity = '1'
+            j++
         }else{
-            var name = mockdata[i].name
-            var pic = mockdata[i].picture
-            createContent(name,pic)
-            carouseList[i].style.opacity = '1'
-        }
-    }, 8200);
+            j = 0
+            setTimeout(() => {
+                j=1
+            }, 6000);
+            for(let i = 0 ; i <arr.length;i++){
+                primeContent[i].style.transform = `translateX(-${(j)*100}%)`
+            }
+            for(let i = 0; i<arrCarouse.length;i++){
+                carouseList[i].style.opacity = '0.6'
+            }
+            carouseList[j].style.opacity = '1'
+        }      
+    }, 6000);
 }
-productslideshow()
 //events onscroll display button clicktop
 document.addEventListener('scroll',function(e){
     e.preventDefault()
@@ -85,18 +99,18 @@ clicktop.addEventListener('click',function(e){
     document.body.scrollTop = 0
     document.documentElement.scrollTop = 0
 })
-//events onclick carouse product
-carouseList.forEach(product=>{
-    product.addEventListener('click',function(e){
-        productCarouse.innerHTML =""
-        for(let n = 0; n< carouseList.length;n++){
-            carouseList[n].style.opacity = '0.6'
-        }
-        this.style.opacity = '1'
-        var arr = Array.from(carouseList)
-        let index = arr.indexOf(this)
-        var name = mockdata[index].name
-        var pic = mockdata[index].picture
-        createContent(name,pic)
+
+//events click carouse nav
+function carouseClick(){
+    var primeContent = document.querySelectorAll('.prime-content')
+    carouseList.forEach(notch=>{
+        notch.addEventListener('click',function(e){
+            var currentIndex = arrCarouse.indexOf(this)
+            for(let i =0 ;i<arrCarouse.length;i++){
+                carouseList[i].style.opacity = '0.6'
+                primeContent[i].style.transform = `translateX(-${(currentIndex)*100}%)`
+            }
+            this.style.opacity = '1'
+        })
     })
-})
+}
