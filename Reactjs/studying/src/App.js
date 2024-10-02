@@ -1,31 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Count from './components/Count';
+import Start from './components/Start';
+import Stop from './components/Stop';
 
 class App extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      count: 1,
-      age:8
+      time: new Date()
     }
+    this.process = null
   }
-  increase = ()=>{
-    return(
-    this.setState({
-      count: this.state.count+1
-    })
-  )
+  startApp = ()=>{
+    this.process = setInterval(() => {
+      this.setState({
+        time: new Date()
+      })
+    }, 1000);
+  }
+  stopApp = ()=>{
+    clearInterval(this.process)
   }
   render(){
-    return (
-      <div>
-        <Count number1={this.state.count} />
-        <button onClick={this.increase}>Click</button>
-        <Count number1='000' />
-        <Count number1='888' />
-      </div>
+    return(
+      <>
+        <h1>Dong Ho : {this.state.time.toString()}</h1>
+        <Start StartApp={this.startApp}></Start>
+        <Stop StopApp={this.stopApp} ></Stop>
+      </>
     )
   }
 }
